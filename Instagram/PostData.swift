@@ -13,6 +13,8 @@ class PostData: NSObject {
     var id = ""
     var name = ""
     var caption = ""
+    var commentator = ""
+    var comment = ""
     var date = ""
     var likes: [String] = []
     var isLiked: Bool = false
@@ -28,6 +30,15 @@ class PostData: NSObject {
 
         if let caption = postDic["caption"] as? String {
             self.caption = caption
+        }
+        
+        if let comments = postDic["latest_comments"] as? [String: Any] {
+            if let updatedBy = comments["updatedBy"] as? String {
+                self.commentator = updatedBy
+            }
+            if let sentence = comments["sentence"] as? String {
+                self.comment = sentence
+            }
         }
 
         if let timestamp = postDic["date"] as? Timestamp {
@@ -50,6 +61,6 @@ class PostData: NSObject {
     }
 
     override var description: String {
-        return "PostData: name=\(name); caption=\(caption); date=\(date); likes=\(likes.count); id=\(id);"
+        return "PostData: name=\(name); caption=\(caption); commentator=\(commentator); comment=\(comment); date=\(date); likes=\(likes.count); id=\(id);"
     }
 }

@@ -71,7 +71,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjR-je-O9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2836" y="654"/>
+            <point key="canvasLocation" x="-1486" y="-111"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="e4u-pN-GmY">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="w4v-M5-uee" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GhI-O7-RKi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ace-3h-6k0">
+                                <rect key="frame" x="10" y="79" width="373" height="719"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFx-iv-N3l">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-lh-1hY">
+                                        <rect key="frame" x="0.0" y="40.333333333333314" width="373" height="568.66666666666674"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xzo-HW-lta">
+                                        <rect key="frame" x="0.0" y="629" width="373" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-Tp-vgz">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="コメントする" backgroundImage="btn"/>
+                                                <connections>
+                                                    <action selector="handlePostButton:" destination="w4v-M5-uee" eventType="touchUpInside" id="IwB-V3-0xj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8d-q6-gqu">
+                                                <rect key="frame" x="0.0" y="50" width="373" height="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                                <connections>
+                                                    <action selector="handleCancelButton:" destination="w4v-M5-uee" eventType="touchUpInside" id="D7W-gN-6aJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q94-pI-UST"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q94-pI-UST" firstAttribute="bottom" secondItem="ace-3h-6k0" secondAttribute="bottom" constant="20" id="ZFY-1a-3h2"/>
+                            <constraint firstItem="ace-3h-6k0" firstAttribute="leading" secondItem="q94-pI-UST" secondAttribute="leading" constant="10" id="d5M-6D-lby"/>
+                            <constraint firstItem="ace-3h-6k0" firstAttribute="top" secondItem="q94-pI-UST" secondAttribute="top" constant="20" id="dhG-Su-O5E"/>
+                            <constraint firstItem="q94-pI-UST" firstAttribute="trailing" secondItem="ace-3h-6k0" secondAttribute="trailing" constant="10" id="l32-ZJ-rgp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentView" destination="NHA-lh-1hY" id="HnZ-y1-YVz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fW-mh-EgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2903" y="1313"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="awX-Zy-em8">
@@ -151,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M0k-Jx-yZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2185" y="1312"/>
+            <point key="canvasLocation" x="-2185" y="1314"/>
         </scene>
         <!--設定-->
         <scene sceneID="Iia-nx-Rqd">
@@ -205,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPa-cK-iWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="654"/>
+            <point key="canvasLocation" x="-1486" y="654"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="wZa-dO-tdm">
@@ -236,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgN-LT-42k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2185" y="654"/>
+            <point key="canvasLocation" x="-2889" y="654"/>
         </scene>
         <!--投稿-->
         <scene sceneID="Rn2-hF-wy3">
@@ -290,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQu-Kf-HOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1535" y="654"/>
+            <point key="canvasLocation" x="-2185" y="654"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="puP-de-27Q">
@@ -318,6 +383,9 @@
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="setting" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
