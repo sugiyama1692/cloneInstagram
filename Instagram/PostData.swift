@@ -15,6 +15,7 @@ class PostData: NSObject {
     var caption = ""
     var commentator = ""
     var comment = ""
+    var comments: [[String: Any]] = []
     var date = ""
     var likes: [String] = []
     var isLiked: Bool = false
@@ -32,13 +33,17 @@ class PostData: NSObject {
             self.caption = caption
         }
         
-        if let comments = postDic["latest_comments"] as? [String: Any] {
-            if let updatedBy = comments["updatedBy"] as? String {
+        if let comment = postDic["latest_comments"] as? [String: Any] {
+            if let updatedBy = comment["updatedBy"] as? String {
                 self.commentator = updatedBy
             }
-            if let sentence = comments["sentence"] as? String {
+            if let sentence = comment["sentence"] as? String {
                 self.comment = sentence
             }
+        }
+        
+        if let comments = postDic["comments"] as? [[String: Any]] {
+            self.comments = comments
         }
 
         if let timestamp = postDic["date"] as? Timestamp {

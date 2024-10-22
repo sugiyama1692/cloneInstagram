@@ -40,12 +40,12 @@ class CommentViewController: UIViewController {
         let postRef = Firestore.firestore().collection(Const.PostPath).document(documentId)
         // FireStoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
+        let comment: [String: Any] = [
+            "commentator": name!,
+            "sentence": self.commentView.text!,
+        ]
         let newComments: [String: Any] = [
-            "latest_comments": [
-                "updatedAt": FieldValue.serverTimestamp(),
-                "updatedBy": name!,
-                "sentence": self.commentView.text!,
-            ]
+            "comments": FieldValue.arrayUnion([comment])
         ]
         
         postRef.updateData(newComments)
